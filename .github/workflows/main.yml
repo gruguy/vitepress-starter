@@ -12,17 +12,18 @@ jobs:
       - name: install nodejs
         uses: actions/setup-node@v3
         with:
-          node-version: 14.0.0
+          node-version: 16.0.0
       - name: install deps
         run: npm install
       - name: build app
         run: npm run docs:build
       - name: copy dist file with scp
-        uses: cross-the-world/ssh-scp-ssh-pipelines@v1.1.4
+        uses: cross-the-world/scp-pipeline@v1.2.1
         with:
           host: ${{secrets.REMOTE_HOST}}
           user: ${{secrets.REMOTE_USER}}
           pass: ${{secrets.REMOTE_PASS}}
           port: 22
+          connect_timeout: 10s
           local: "./docs/dist"
-          remote: ${{secrets.REMOTE_TARGET}}
+          remote: /www/wwwroot
