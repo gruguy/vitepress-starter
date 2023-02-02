@@ -6,7 +6,7 @@ on:
       - master
 jobs:
   build:
-    runs-on: centos-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: install nodejs
