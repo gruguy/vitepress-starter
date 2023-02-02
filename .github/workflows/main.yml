@@ -18,11 +18,11 @@ jobs:
       - name: build app
         run: npm run docs:build
       - name: copy dist file with scp
-        uses: appleboy/scp-action@v0.0.1
+        uses: cross-the-world/ssh-scp-ssh-pipelines@v1.1.4
         with:
           host: ${{secrets.REMOTE_HOST}}
-          username: ${{secrets.REMOTE_USER}}
-          password: ${{secrets.REMOTE_PASS}}
+          user: ${{secrets.REMOTE_USER}}
+          pass: ${{secrets.REMOTE_PASS}}
           port: 22
-          source: "/docs"
+          local: "./docs/dist"
           target: ${{secrets.REMOTE_TARGET}}
