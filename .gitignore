@@ -1,2 +1,3 @@
 .vitepress
 docs/.vitepress/dist
+.vitepress/cache
