@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: install nodejs
-        uses: actions/setup-node@3
+        uses: actions/setup-node@v3
         with:
           node-version: "16.X"
       - name: install deps
