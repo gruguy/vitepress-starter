@@ -1,0 +1,30 @@
+name: deploy-website
+
+on:
+  push:
+    branches:
+    - main
+jobs:
+  build:
+    runs-on: centos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: install nodejs
+      uses: actions/setup-node@2.5.1
+      with:
+        node-version: "16.X"
+    - name: install deps
+      run: yarn
+    - name: build app
+      run: yarn docs/build
+    - name: copy dist file with scp
+      uses: appleboy/scp-action@v0.0.1
+      with:
+        host: ${{secrets.REMOTE_HOST}}
+        username: ${{secrets.REMOTE_USER}}
+        password: ${{secrets.REMOTE_PASS}}
+        port: 22
+        source: '/docs'
+        target: ${{secrets.REMOTE_TARGET}}
+    
+    
