@@ -1,0 +1,13 @@
+{
+  "name": "vite-press-starter",
+  "version": "1.0.0",
+  "description": "vite-press example",
+  "main": "index.js",
+  "author": "gruguy",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "vitepress": "^1.0.0-alpha.45",
+    "vue": "^3.2.45"
+  }
+}
