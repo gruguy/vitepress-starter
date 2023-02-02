@@ -25,4 +25,4 @@ jobs:
           pass: ${{secrets.REMOTE_PASS}}
           port: 22
           local: "./docs/dist"
-          target: ${{secrets.REMOTE_TARGET}}
+          remote: ${{secrets.REMOTE_TARGET}}
