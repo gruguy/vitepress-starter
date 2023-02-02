@@ -16,7 +16,7 @@ jobs:
       - name: install deps
         run: npm install
       - name: build app
-        run: npm run docs/build
+        run: npm run docs:build
       - name: copy dist file with scp
         uses: appleboy/scp-action@v0.0.1
         with:
