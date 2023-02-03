@@ -17,8 +17,8 @@ jobs:
         run: npm install
       # - name: get auth
       #   run: git update-index --chmod=+x script.sh
-      - name: build app
-        run: npm run docs:build
+      # - name: build app
+      #   run: npm run docs:build
       - name: copy dist file with scp
         uses: garygrossgarten/github-action-scp@release
         with:
@@ -27,5 +27,5 @@ jobs:
           password: ${{secrets.REMOTE_PASS}}
           port: 22
           connect_timeout: 10s
-          local: "./docs/dist"
+          local: "./docs"
           remote: /home/github-action
