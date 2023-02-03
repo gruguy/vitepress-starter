@@ -27,5 +27,5 @@ jobs:
           password: ${{secrets.REMOTE_PASS}}
           port: 22
           connect_timeout: 10s
-          local: "./docs"
+          local: "./docs/.vitepress/dist"
           remote: /home/github-action
