@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: install nodejs
         uses: actions/setup-node@v3
         with:
@@ -20,11 +20,11 @@ jobs:
       - name: build app
         run: npm run docs:build
       - name: copy dist file with scp
-        uses: cross-the-world/scp-pipeline@v1.2.1
+        uses: garygrossgarten/github-action-scp@release
         with:
           host: ${{secrets.REMOTE_HOST}}
-          user: ${{secrets.REMOTE_USER}}
-          pass: ${{secrets.REMOTE_PASS}}
+          username: ${{secrets.REMOTE_USER}}
+          password: ${{secrets.REMOTE_PASS}}
           port: 22
           connect_timeout: 10s
           local: "./docs/dist"
