@@ -15,10 +15,13 @@ jobs:
           node-version: 14.0.0
       - name: install deps
         run: npm install
-      # - name: get auth
-      #   run: git update-index --chmod=+x script.sh
       - name: build app
-        run: sudo npm run docs:build
+        run: sudo npm run build
+      - name: Deploy on github-pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.MY_TEMP_TOKEN }}
+        publish_dir: docs/.vitepress/dist
       - name: copy dist file with scp
         uses: garygrossgarten/github-action-scp@release
         with:
@@ -27,5 +30,5 @@ jobs:
           password: ${{secrets.REMOTE_PASS}}
           port: 22
           connect_timeout: 10s
-          local: "./docs/.vitepress/dist"
+          local: "./dist"
           remote: /home/github-action
