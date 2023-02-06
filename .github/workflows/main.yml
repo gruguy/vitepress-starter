@@ -18,10 +18,10 @@ jobs:
       - name: build app
         run: sudo npm run build
       - name: Deploy on github-pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.MY_TEMP_TOKEN }}
-        publish_dir: docs/.vitepress/dist
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.MY_TEMP_TOKEN }}
+          publish_dir: docs/.vitepress/dist
       - name: copy dist file with scp
         uses: garygrossgarten/github-action-scp@release
         with:
