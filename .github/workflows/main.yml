@@ -16,7 +16,7 @@ jobs:
       - name: install deps
         run: npm install
       - name: build app
-        run: sudo npm run build
+        run: sudo npm run docs:build
       - name: Deploy on github-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
