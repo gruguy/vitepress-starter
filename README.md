@@ -1,6 +1,11 @@
 # vitepress-github action CI
 
-vitepress-starter test github action CI
+vitepress test github action CI
+
+## 安装 vitepress
+
+根据官网步骤安装， 找好本地目录，执行命令 `yarn init`初始化 package.json。然后执行`yarn add vitepress vue -D`,安装所需依赖。创建`docs`目录，在此目录下创建`index.md`,然后编辑内容即可，Layout 配置根据官方文档一步步操作即可。
+然后在根目录下创建.github 文件夹，再创建 workflow 目录（注意：这两个文件夹名字固定，不能随意修改），然后创建 main.yml 文件（此文件名称可随意修改），配置内容如下：
 
 ```
 name: deploy-website
