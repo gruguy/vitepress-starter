@@ -1,6 +1,7 @@
 export default {
   title: "VitePress333",
   description: "Just playing around.",
+  base: "/vitepress-starter/",
   themeConfig: {
     siteTitle: "My Coustom Title", // false 不显示
     logo: "",
