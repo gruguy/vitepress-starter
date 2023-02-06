@@ -1,9 +1,9 @@
 export default {
-  title: "VitePress333",
+  title: "静态文档github-action",
   description: "Just playing around.",
   base: "/vitepress-starter/",
   themeConfig: {
-    siteTitle: "My Coustom Title", // false 不显示
+    siteTitle: "静态文档github-action", // false 不显示
     logo: "",
     nav: [
       { text: "Guide", link: "/guide" },
